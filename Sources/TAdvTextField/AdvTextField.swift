@@ -3,13 +3,13 @@
 import SwiftUI
 public struct AdvTextField: View {
 
-  let image: String? = nil
-  let placeHolder: String
-  let cornerRadius: Double = 12
-  @Binding var value: String
-  let fontSize: CGFloat = 20
-  let fontWeight: Font.Weight = Font.Weight.regular
-  let onSubmit: () -> Void
+    var image: String? = nil
+    var placeHolder: String
+    var cornerRadius: Double = 12
+    @Binding var value: String
+    var fontSize: CGFloat = 20
+    var fontWeight: Font.Weight = Font.Weight.regular
+    var onSubmit: () -> Void
 
   public var body: some View {
     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
