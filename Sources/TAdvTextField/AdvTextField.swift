@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 import SwiftUI
 
-struct AdvTextField: View {
+public struct AdvTextField: View {
     
     let image: String? = nil
     let placeHolder: String
@@ -14,7 +14,7 @@ struct AdvTextField: View {
     
     
     
-    var body: some View {
+    public   var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)){
             TextField(NSLocalizedString(placeHolder, comment: placeHolder), text: $value).frame(height: 60).padding(.horizontal,75).font(.system(size: fontSize, weight: fontWeight)).background(Color.white).clipShape(RoundedRectangle(cornerRadius: cornerRadius)).onChange(of: value) { newValue in
                 onSubmit()
