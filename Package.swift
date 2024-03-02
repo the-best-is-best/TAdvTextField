@@ -7,7 +7,7 @@ let package = Package(
     name: "TAdvTextField",
     platforms: [ 
         .iOS(.v14),
-        .macOS(.v11)
+        .macOS(.v14)
        
         
     ],

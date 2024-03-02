@@ -1,8 +1,26 @@
+////
+////  AdvTextField.swift
+////
+////
+////  Created by 52ndSolution on 02/03/2024.
+////
 //
-//  File.swift
-//  
+//import Foundation
+//import SwiftUI
 //
-//  Created by 52ndSolution on 02/03/2024.
+//public enum AdvTextFieldStyle {
+//  case none
+//  case outline(color: Color, width: CGFloat)
+//  case underline(color: Color, height: CGFloat)
+//    case Custom(color:Color, width: CGFloat, offset: Offset)
+//}
 //
-
-import Foundation
+//public class Offset {
+//    var x:Double
+//    var y: Double
+//    
+//    public init(x: Double, y: Double) {
+//        self.x = x
+//        self.y = y
+//    }
+//}
