@@ -11,6 +11,7 @@ public struct AdvTextField: View {
     public  var fontSize: CGFloat = 20
     public  var fontWeight: Font.Weight
     public var onSubmit:() -> Void
+   
     
 //    @State private var internalValue: String = ""
     public init(image: String? = nil, placeHolder: String, cornerRadius: Double = 20, value: Binding<String>, fontSize: CGFloat = 20, fontWeight: Font.Weight = Font.Weight.regular, onSubmit: @escaping () -> Void) {
@@ -28,7 +29,7 @@ public struct AdvTextField: View {
     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
         TextField(placeHolder, text: self.value) // Use public initializer
         .frame(height: 60)
-        .padding(.horizontal, 75)
+        .padding(.horizontal,image != nil ? 75: 0)
         .font(.system(size: fontSize, weight: fontWeight))
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
