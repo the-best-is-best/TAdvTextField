@@ -2,15 +2,16 @@
 // https://docs.swift.org/swift-book
 import SwiftUI
 public struct AdvTextField: View {
+    
+    public  var image: String? = nil
+    public  var placeHolder: String
+    public  var cornerRadius: Double = 12
+    @Binding public var value: String
+    public  var fontSize: CGFloat = 20
+    public  var fontWeight: Font.Weight = Font.Weight.regular
+    public var onSubmit: () -> Void
+    
 
-  let image: String? = nil
-  let placeHolder: String
-  let cornerRadius: Double = 12
-  @Binding var value: String
-  let fontSize: CGFloat = 20
-  let fontWeight: Font.Weight = Font.Weight.regular
-  let onSubmit: () -> Void
-public init() {}
   public var body: some View {
     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
       TextField(placeHolder, text: $value) // Use public initializer
