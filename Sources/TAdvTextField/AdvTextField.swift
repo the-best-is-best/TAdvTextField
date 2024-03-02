@@ -28,7 +28,7 @@ public struct AdvTextField: View {
     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
         TextField(placeHolder, text: self.value) // Use public initializer
         .frame(height: 60)
-        .padding(.horizontal, image != nil ? 75 : 0)
+        .padding(.horizontal, image != nil ? 30 : 0)
         .font(.system(size: fontSize, weight: fontWeight))
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
