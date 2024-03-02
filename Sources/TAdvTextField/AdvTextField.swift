@@ -5,13 +5,14 @@ public struct AdvTextField: View {
     
     public  var image: String? = nil
     public  var placeHolder: String
-    public  var cornerRadius: Double = 12
+    public  var cornerRadius: Double
      public var value: String
     public  var fontSize: CGFloat = 20
-    public  var fontWeight: Font.Weight = Font.Weight.regular
-    public var onSubmit: () -> Void
+    public  var fontWeight: Font.Weight
+    public var onSubmit: (String) -> Void
+    
     @State private var internalValue: String = ""
-    public init(image: String? = nil, placeHolder: String, cornerRadius: Double, value: String, fontSize: CGFloat, fontWeight: Font.Weight, onSubmit: @escaping () -> Void) {
+    public init(image: String? = nil, placeHolder: String, cornerRadius: Double = 20, value: String, fontSize: CGFloat = 20, fontWeight: Font.Weight = Font.Weight.regular, onSubmit: @escaping (String) -> Void) {
         self.image = image
         self.placeHolder = placeHolder
         self.cornerRadius = cornerRadius
@@ -31,7 +32,7 @@ public struct AdvTextField: View {
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
         .onChange(of: value) { newValue in
-          onSubmit()
+          onSubmit(newValue)
         }
       if (image != nil) {
         Image(systemName: image!)
