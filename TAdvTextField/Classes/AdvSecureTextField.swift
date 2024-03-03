@@ -19,7 +19,7 @@ public struct AdvSecureTextField: View {
 
     @State  private var isSecure = true
     
-  public  init(image: String? = nil, placeHolder: String, value: Binding<String>, autoCaoitalization: UITextAutocapitalizationType = UITextAutocapitalizationType.none, fontWeight: Font.Weight = Font.Weight.regular, onSubmit: @escaping () -> Void, fontSize: CGFloat, cornerRadius: Double) {
+  public  init(image: String? = nil, placeHolder: String, value: Binding<String>, autoCaoitalization: UITextAutocapitalizationType = UITextAutocapitalizationType.none, fontWeight: Font.Weight = Font.Weight.regular, onSubmit: @escaping () -> Void, fontSize: CGFloat = 20, cornerRadius: Double = 20) {
         self.image = image
         self.placeHolder = placeHolder
         self.value = value
