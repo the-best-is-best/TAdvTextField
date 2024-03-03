@@ -9,6 +9,8 @@ import SwiftUI
 
 public struct AdvSecureTextField: View {
     var image: String? = nil
+     var imageColor: Color
+    var imageSize: CGFloat
     var placeHolder: String
     var value:Binding<String>
     var autoCaoitalization = UITextAutocapitalizationType.none
@@ -19,8 +21,10 @@ public struct AdvSecureTextField: View {
 
     @State  private var isSecure = true
     
-  public  init(image: String? = nil, placeHolder: String, value: Binding<String>,  fontSize: CGFloat = 20, cornerRadius: Double = 20, fontWeight: Font.Weight = Font.Weight.regular,autoCaoitalization: UITextAutocapitalizationType = UITextAutocapitalizationType.none, onSubmit: @escaping () -> Void) {
+    public  init(image: String? = nil,imageSize:CGFloat = 20 ,imageColor:Color = Color.black, placeHolder: String, value: Binding<String>,  fontSize: CGFloat = 20, cornerRadius: Double = 20, fontWeight: Font.Weight = Font.Weight.regular,autoCaoitalization: UITextAutocapitalizationType = UITextAutocapitalizationType.none, onSubmit: @escaping () -> Void) {
         self.image = image
+        self.imageSize = imageSize
+        self.imageColor  = imageColor
         self.placeHolder = placeHolder
         self.value = value
         self.autoCaoitalization = autoCaoitalization
@@ -32,30 +36,29 @@ public struct AdvSecureTextField: View {
     public var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)){
             if(isSecure){
-                SecureField(NSLocalizedString(placeHolder, comment: placeHolder), text: value).padding(.leading, image != nil ? 70 : 0)
-                    .font(.system(size: fontSize, weight: fontWeight)).clipShape(RoundedRectangle(cornerRadius: cornerRadius)).onChange(of: value.wrappedValue) { newValue in
+                SecureField(placeHolder, text: value)
+                    .padding(.leading, image != nil ? 70 : 0)
+                    .font(.system(size: fontSize, weight: fontWeight))
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                    .onChange(of: value.wrappedValue) { newValue in
                     onSubmit()
                 }.autocapitalization(autoCaoitalization)
-                Spacer()
-                
-                    .padding(.trailing, 8)
+               
             }else{
-                TextField(NSLocalizedString(placeHolder, comment: placeHolder), text: value).padding(.leading, image != nil ? 70 : 0).font(.system(size: fontSize, weight: fontWeight)).clipShape(RoundedRectangle(cornerRadius:cornerRadius)).onChange(of: value.wrappedValue) { newValue in
+                TextField(placeHolder, text: value).padding(.leading, image != nil ? 70 : 0).font(.system(size: fontSize, weight: fontWeight)).clipShape(RoundedRectangle(cornerRadius:cornerRadius)).onChange(of: value.wrappedValue) { newValue in
                     onSubmit()
                 }.autocapitalization(autoCaoitalization)
-                Spacer()
-                
-                    .padding(.trailing, 8)
+            
             }
             Button(action: {
                isSecure.toggle()
            }) {
                Image(systemName: isSecure ? "eye.slash" : "eye")
-                   .foregroundColor(.black).frame(width: 60, height: 60).padding(.horizontal)
+                   .foregroundColor(imageColor).font(.system(size: fontSize)).padding(.horizontal)
            }.padding(.leading, UIScreen.main.bounds.width - 160)
 
             if(image != nil){
-                Image(systemName: image!).font(.system(size: 30)).foregroundColor(.black).frame(width: 60, height: 60).padding(.horizontal)
+                Image(systemName: image!).font(.system(size: imageSize)).foregroundColor(imageColor).padding(.horizontal)
             }
        }.padding()
     }

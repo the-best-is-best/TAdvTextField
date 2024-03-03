@@ -5,6 +5,10 @@ import SwiftUI
 public struct AdvTextField: View {
     
     public  var image: String? = nil
+    var imageSize: CGFloat
+
+    public var imageColor: Color
+    
     public  var placeHolder: String
     public  var cornerRadius: Double
     public var value: Binding<String>
@@ -12,20 +16,23 @@ public struct AdvTextField: View {
     public  var fontWeight: Font.Weight
     public var autoCaoitalization:UITextAutocapitalizationType
     public var onSubmit:() -> Void
+  
    
 
     
     
-    public init(image: String? = nil, placeHolder: String, cornerRadius: Double = 20, value: Binding<String>, fontSize: CGFloat = 20, fontWeight: Font.Weight = Font.Weight.regular, autoCaoitalization: UITextAutocapitalizationType=UITextAutocapitalizationType.none
+    public init(image: String? = nil,imageSize:CGFloat = 20 , imageColor:Color = Color.black , placeHolder: String, cornerRadius: Double = 20, value: Binding<String>, fontSize: CGFloat = 20, fontWeight: Font.Weight = Font.Weight.regular, autoCaoitalization: UITextAutocapitalizationType=UITextAutocapitalizationType.none
                 , onSubmit: @escaping () -> Void) {
-        self.image = image
-        self.placeHolder = placeHolder
-        self.cornerRadius = cornerRadius
-        self.value = value
-        self.fontSize = fontSize
-        self.fontWeight = fontWeight
-        self.autoCaoitalization = autoCaoitalization
-        self.onSubmit = onSubmit
+                   self.image = image
+        self.imageSize = imageSize
+                    self.imageColor = imageColor
+                    self.placeHolder = placeHolder
+                    self.cornerRadius = cornerRadius
+                    self.value = value
+                    self.fontSize = fontSize
+                    self.fontWeight = fontWeight
+                    self.autoCaoitalization = autoCaoitalization
+                    self.onSubmit = onSubmit
 
     }
 
@@ -34,10 +41,10 @@ public struct AdvTextField: View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
         TextField(placeHolder, text: self.value) // Use public initializer
         .padding(.leading, image != nil ? 70 : 0)
-        
         .font(.system(size: fontSize, weight: fontWeight))
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-        .autocapitalization(autoCaoitalization).onChange(of: value.wrappedValue) {
+        .autocapitalization(autoCaoitalization)
+        .onChange(of: value.wrappedValue) {
             _ in
            onSubmit()
         }
@@ -46,9 +53,8 @@ public struct AdvTextField: View {
       if (image != nil) {
           
         Image(systemName: image!)
-          .font(.system(size: 30))
-          .foregroundColor(.black)
-          .frame(width: 60, height: 60)
+          .font(.system(size: imageSize))
+          .foregroundColor(imageColor)
           .padding(.horizontal)
       }
     }

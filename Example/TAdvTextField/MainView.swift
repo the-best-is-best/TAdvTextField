@@ -16,11 +16,26 @@ struct MainView: View {
         VStack{
             AdvTextField(placeHolder: "Email",  value: $viewModel.email){
                 print("new v ", viewModel.email)
-            }
-            Spacer().frame(height: 10)
-            AdvTextField(placeHolder: "Email",  value: $viewModel.email){
+            }.overlay(
+                Rectangle()
+                    .frame(height: 1)
+                    .offset(y: 20)  // Adjust vertical offset as needed
+                    .foregroundColor(Color.black)  // Set underline color
+                    .edgesIgnoringSafeArea(.all).padding()
+            )
+
+            AdvSecureTextField(
+                imageColor: .red,
+                placeHolder: "Password",  value: $viewModel.email){
                 print("new v ", viewModel.email)
-            }
+            }.overlay(
+                Rectangle()
+                    .frame(height: 1)
+                    .offset(y: 20)  // Adjust vertical offset as needed
+                    .foregroundColor(Color.black)  // Set underline color
+                    .edgesIgnoringSafeArea(.all).padding()
+            )
+
         }
     }
 }
