@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
    s.source                   = {:git => 'https://github.com/the-best-is-best/TAdvTextField.git', :tag => s.version.to_s }
    s.authors                  =  { 'the-best-is-best' => 'michelle.raouf@outlook.com' }
    s.license                  = { :type => 'MIT', :file => 'LICENSE' }
+   s.swift_version            = '5.5'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 

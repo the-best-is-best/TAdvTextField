@@ -15,6 +15,7 @@
 		C28ECB2EB995066004B45C614B9FCB34 /* Pods-TAdvTextField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 041B21F1DB77072586E4A0A02BD109BB /* Pods-TAdvTextField_Tests-dummy.m */; };
 		C4167656AF9D29D3965393B6851A0F22 /* Pods-TAdvTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F7461C050D47951DF0915B24C43D1E14 /* Pods-TAdvTextField_Example-dummy.m */; };
 		DF57382D2B94927F00765325 /* AdvTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF57382C2B94927F00765325 /* AdvTextField.swift */; };
+		DF5738352B94A06800765325 /* AdvSecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5738342B94A06800765325 /* AdvSecureTextField.swift */; };
 		E71125F0E2BE99D0FAEB03ED027552E3 /* Pods-TAdvTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7662AFC44DA268E6EAFC371FD52580CC /* Pods-TAdvTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F65C071BCC58DD131F7C199CA6773176 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		D2CEA6D1B0A8138FB73BBFEF25F34B6F /* TAdvTextField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TAdvTextField.debug.xcconfig; sourceTree = "<group>"; };
 		D7A20B2B756C2CD8213E92CE6187DB54 /* Pods-TAdvTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TAdvTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DF57382C2B94927F00765325 /* AdvTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvTextField.swift; path = TAdvTextField/Classes/AdvTextField.swift; sourceTree = "<group>"; };
+		DF5738342B94A06800765325 /* AdvSecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdvSecureTextField.swift; path = TAdvTextField/Classes/AdvSecureTextField.swift; sourceTree = "<group>"; };
 		E3E2FE6671B5432F9AAFB20C53F79297 /* Pods-TAdvTextField_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TAdvTextField_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		F7461C050D47951DF0915B24C43D1E14 /* Pods-TAdvTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TAdvTextField_Example-dummy.m"; sourceTree = "<group>"; };
 		FDD1B5469082920F974F5A7F5FBFF469 /* Pods_TAdvTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TAdvTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 				DED142329F175E182E11D57D2C01D46E /* Pod */,
 				F4DD770ECF4E7CAAA0965DA1BC214EBF /* Support Files */,
 				DF57382C2B94927F00765325 /* AdvTextField.swift */,
+				DF5738342B94A06800765325 /* AdvSecureTextField.swift */,
 			);
 			name = TAdvTextField;
 			path = ../..;
@@ -382,6 +385,7 @@
 			files = (
 				2968449C477B262CC6CFA44FAA9AD9BE /* TAdvTextField-dummy.m in Sources */,
 				DF57382D2B94927F00765325 /* AdvTextField.swift in Sources */,
+				DF5738352B94A06800765325 /* AdvSecureTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

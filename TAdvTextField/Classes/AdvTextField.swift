@@ -12,10 +12,11 @@ public struct AdvTextField: View {
     public  var fontWeight: Font.Weight
     public var autoCaoitalization:UITextAutocapitalizationType
     public var onSubmit:() -> Void
+   
 
     
     
-    public init(image: String? = nil, placeHolder: String, cornerRadius: Double = 20, value: Binding<String>, fontSize: CGFloat = 20, fontWeight: Font.Weight = Font.Weight.regular, autoCaoitalization: UITextAutocapitalizationType=UITextAutocapitalizationType.none 
+    public init(image: String? = nil, placeHolder: String, cornerRadius: Double = 20, value: Binding<String>, fontSize: CGFloat = 20, fontWeight: Font.Weight = Font.Weight.regular, autoCaoitalization: UITextAutocapitalizationType=UITextAutocapitalizationType.none
                 , onSubmit: @escaping () -> Void) {
         self.image = image
         self.placeHolder = placeHolder
@@ -28,14 +29,14 @@ public struct AdvTextField: View {
 
     }
 
-  public var body: some View {
+    public var body: some View {
     
     ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
         TextField(placeHolder, text: self.value) // Use public initializer
         .frame(height: 60)
         .padding(.leading, image != nil ? 70 : 0)
+        
         .font(.system(size: fontSize, weight: fontWeight))
-        .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
         .autocapitalization(autoCaoitalization).onChange(of: value.wrappedValue) {
             _ in
