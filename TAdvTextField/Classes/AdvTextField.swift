@@ -31,9 +31,8 @@ public struct AdvTextField: View {
 
     public var body: some View {
     
-    ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
+        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)) {
         TextField(placeHolder, text: self.value) // Use public initializer
-        .frame(height: 60)
         .padding(.leading, image != nil ? 70 : 0)
         
         .font(.system(size: fontSize, weight: fontWeight))

@@ -30,9 +30,9 @@ public struct AdvSecureTextField: View {
         self.cornerRadius = cornerRadius
     }
     public var body: some View {
-        ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)){
+        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)){
             if(isSecure){
-                SecureField(NSLocalizedString(placeHolder, comment: placeHolder), text: value).frame(height: 60).padding(.leading, image != nil ? 70 : 0)
+                SecureField(NSLocalizedString(placeHolder, comment: placeHolder), text: value).padding(.leading, image != nil ? 70 : 0)
                     .font(.system(size: fontSize, weight: fontWeight)).clipShape(RoundedRectangle(cornerRadius: cornerRadius)).onChange(of: value.wrappedValue) { newValue in
                     onSubmit()
                 }.autocapitalization(autoCaoitalization)
@@ -40,7 +40,7 @@ public struct AdvSecureTextField: View {
                 
                     .padding(.trailing, 8)
             }else{
-                TextField(NSLocalizedString(placeHolder, comment: placeHolder), text: value).frame(height: 60).padding(.leading, image != nil ? 70 : 0).font(.system(size: fontSize, weight: fontWeight)).clipShape(RoundedRectangle(cornerRadius:cornerRadius)).onChange(of: value.wrappedValue) { newValue in
+                TextField(NSLocalizedString(placeHolder, comment: placeHolder), text: value).padding(.leading, image != nil ? 70 : 0).font(.system(size: fontSize, weight: fontWeight)).clipShape(RoundedRectangle(cornerRadius:cornerRadius)).onChange(of: value.wrappedValue) { newValue in
                     onSubmit()
                 }.autocapitalization(autoCaoitalization)
                 Spacer()
