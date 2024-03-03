@@ -19,7 +19,7 @@ public struct AdvSecureTextField: View {
 
     @State  private var isSecure = true
     
-    init(image: String? = nil, placeHolder: String, value: Binding<String>, autoCaoitalization: UITextAutocapitalizationType = UITextAutocapitalizationType.none, fontWeight: Font.Weight, onSubmit: @escaping () -> Void, fontSize: CGFloat, cornerRadius: Double, isSecure: Bool = true) {
+  public  init(image: String? = nil, placeHolder: String, value: Binding<String>, autoCaoitalization: UITextAutocapitalizationType = UITextAutocapitalizationType.none, fontWeight: Font.Weight = Font.Weight.regular, onSubmit: @escaping () -> Void, fontSize: CGFloat, cornerRadius: Double) {
         self.image = image
         self.placeHolder = placeHolder
         self.value = value
@@ -28,7 +28,6 @@ public struct AdvSecureTextField: View {
         self.onSubmit = onSubmit
         self.fontSize = fontSize
         self.cornerRadius = cornerRadius
-        self.isSecure = isSecure
     }
     public var body: some View {
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)){
