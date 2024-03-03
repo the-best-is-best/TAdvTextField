@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '14.0'
+
+target 'TAdvTextField_Example' do
+  pod 'TAdvTextField', :path => '../'
+
+  target 'TAdvTextField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

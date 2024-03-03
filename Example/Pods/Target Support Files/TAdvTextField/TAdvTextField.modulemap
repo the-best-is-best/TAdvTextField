@@ -1,0 +1,6 @@
+framework module TAdvTextField {
+  umbrella header "TAdvTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

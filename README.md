@@ -1,9 +1,9 @@
-# tx
+# TAdvTextField
 
-[![CI Status](https://img.shields.io/travis/72160249/tx.svg?style=flat)](https://travis-ci.org/72160249/tx)
-[![Version](https://img.shields.io/cocoapods/v/tx.svg?style=flat)](https://cocoapods.org/pods/tx)
-[![License](https://img.shields.io/cocoapods/l/tx.svg?style=flat)](https://cocoapods.org/pods/tx)
-[![Platform](https://img.shields.io/cocoapods/p/tx.svg?style=flat)](https://cocoapods.org/pods/tx)
+[![CI Status](https://img.shields.io/travis/72160249/TAdvTextField.svg?style=flat)](https://travis-ci.org/72160249/TAdvTextField)
+[![Version](https://img.shields.io/cocoapods/v/TAdvTextField.svg?style=flat)](https://cocoapods.org/pods/TAdvTextField)
+[![License](https://img.shields.io/cocoapods/l/TAdvTextField.svg?style=flat)](https://cocoapods.org/pods/TAdvTextField)
+[![Platform](https://img.shields.io/cocoapods/p/TAdvTextField.svg?style=flat)](https://cocoapods.org/pods/TAdvTextField)
 
 ## Example
 
@@ -13,18 +13,17 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-tx is available through [CocoaPods](https://cocoapods.org). To install
+TAdvTextField is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'tx'
+pod 'TAdvTextField'
 ```
 
 ## Author
 
-72160249, michelle.raouf@outlook.com
+   the-best-is-best, michelle.raouf@outlook.com
 
 ## License
 
-tx is available under the MIT license. See the LICENSE file for more info.
-
+TAdvTextField is available under the MIT license. See the LICENSE file for more info.
