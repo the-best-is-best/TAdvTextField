@@ -1,66 +1,80 @@
-//
-//  AdvSecureTextField.swift
-//  TAdvTextField
-//
-//  Created by 52ndSolution on 03/03/2024.
-//
+// AdvSecureTextField.swift
+// TAdvTextField
 
 import SwiftUI
 
 public struct AdvSecureTextField: View {
-    var image: String? = nil
-     var imageColor: Color
-    var imageSize: CGFloat
-    var placeHolder: String
-    var value:Binding<String>
-    var autoCaoitalization = UITextAutocapitalizationType.none
-    var fontWeight: Font.Weight = Font.Weight.regular
-    var onSubmit:  () -> Void
-    public  var fontSize: CGFloat
-    public  var cornerRadius: Double
+  public var image: String? = nil
+  public var imageColor: Color = Color.black
+  public var imageSize: CGFloat = 20
+  public var placeholder: String
+  public var value: Binding<String>
+  public var autocapitalization: UITextAutocapitalizationType = .none
+  public var fontWeight: Font.Weight = .regular
+  public var onSubmit: () -> Void
+  public var fontSize: CGFloat = 20
+  public var cornerRadius: Double = 20
 
-    @State  private var isSecure = true
-    
-    public  init(image: String? = nil,imageSize:CGFloat = 20 ,imageColor:Color = Color.black, placeHolder: String, value: Binding<String>,  fontSize: CGFloat = 20, cornerRadius: Double = 20, fontWeight: Font.Weight = Font.Weight.regular,autoCaoitalization: UITextAutocapitalizationType = UITextAutocapitalizationType.none, onSubmit: @escaping () -> Void) {
-        self.image = image
-        self.imageSize = imageSize
-        self.imageColor  = imageColor
-        self.placeHolder = placeHolder
-        self.value = value
-        self.autoCaoitalization = autoCaoitalization
-        self.fontWeight = fontWeight
-        self.onSubmit = onSubmit
-        self.fontSize = fontSize
-        self.cornerRadius = cornerRadius
-    }
-    public var body: some View {
-        ZStack(alignment: Alignment(horizontal: .leading, vertical: .top)){
-            if(isSecure){
-                SecureField(placeHolder, text: value)
-                    .padding(.leading, image != nil ? 70 : 0)
-                    .font(.system(size: fontSize, weight: fontWeight))
-                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-                    .onChange(of: value.wrappedValue) { newValue in
-                    onSubmit()
-                }.autocapitalization(autoCaoitalization)
-               
-            }else{
-                TextField(placeHolder, text: value).padding(.leading, image != nil ? 70 : 0).font(.system(size: fontSize, weight: fontWeight)).clipShape(RoundedRectangle(cornerRadius:cornerRadius)).onChange(of: value.wrappedValue) { newValue in
-                    onSubmit()
-                }.autocapitalization(autoCaoitalization)
-            
-            }
-            Button(action: {
-               isSecure.toggle()
-           }) {
-               Image(systemName: isSecure ? "eye.slash" : "eye")
-                   .foregroundColor(imageColor).font(.system(size: fontSize)).padding(.horizontal)
-           }.padding(.leading, UIScreen.main.bounds.width - 160)
+  @State private var isSecure = true
 
-            if(image != nil){
-                Image(systemName: image!).font(.system(size: imageSize)).foregroundColor(imageColor).padding(.horizontal)
-            }
-       }.padding()
+  public init(
+    image: String? = nil,
+    imageColor: Color = .black,
+    imageSize: CGFloat = 20,
+    placeholder: String,
+    value: Binding<String>,
+    autocapitalization: UITextAutocapitalizationType = .none,
+    fontWeight: Font.Weight = .regular,
+    onSubmit: @escaping () -> Void,
+    fontSize: CGFloat = 20,
+    cornerRadius: Double = 20
+  ) {
+    self.image = image
+    self.imageColor = imageColor
+    self.imageSize = imageSize
+    self.placeholder = placeholder
+    self.value = value
+    self.autocapitalization = autocapitalization
+    self.fontWeight = fontWeight
+    self.onSubmit = onSubmit
+    self.fontSize = fontSize
+    self.cornerRadius = cornerRadius
+  }
+
+  public var body: some View {
+    HStack(alignment: .top) {
+      if let image = image {
+        Image(systemName: image)
+          .font(.system(size: imageSize))
+          .foregroundColor(imageColor)
+          .padding(.trailing)
+      }
+
+      ZStack(alignment: .trailing) {
+        if isSecure {
+          SecureField(placeholder, text: value)
+            .padding(.leading).font(.system(size: fontSize, weight: fontWeight))
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .autocapitalization(autocapitalization)
+            .onChange(of: value.wrappedValue) { _ in onSubmit() }
+        } else {
+          TextField(placeholder, text: value)
+            .padding(.leading).font(.system(size: fontSize, weight: fontWeight))
+            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            .autocapitalization(autocapitalization)
+            .onChange(of: value.wrappedValue) { _ in onSubmit() }
+        }
+        // Use underscore for unused value
+      }
+
+      Button(action: {
+        isSecure.toggle()
+      }) {
+        Image(systemName: isSecure ? "eye.slash" : "eye")
+          .foregroundColor(imageColor)
+          .font(.system(size: fontSize))
+      }
     }
+    .padding()
+  }
 }
-

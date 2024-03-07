@@ -14,7 +14,7 @@ struct MainView: View {
 
     var body: some View {
         VStack{
-            AdvTextField(placeHolder: "Email",  value: $viewModel.email){
+            AdvTextField(placeholder: "Email",  value: $viewModel.email){
                 print("new v ", viewModel.email)
             }.overlay(
                 Rectangle()
@@ -26,7 +26,7 @@ struct MainView: View {
 
             AdvSecureTextField(
                 imageColor: .red,
-                placeHolder: "Password",  value: $viewModel.email){
+                placeholder: "Password",  value: $viewModel.email){
                 print("new v ", viewModel.email)
             }.overlay(
                 Rectangle()
