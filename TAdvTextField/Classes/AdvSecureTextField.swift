@@ -9,6 +9,7 @@ public struct AdvSecureTextField: View {
   public var imageSize: CGFloat = 20
   public var placeholder: String
   public var value: Binding<String>
+  public var keyboardType: UIKeyboardType = .default;
   public var autocapitalization: UITextAutocapitalizationType = .none
   public var fontWeight: Font.Weight = .regular
   public var onSubmit: () -> Void
@@ -23,6 +24,7 @@ public struct AdvSecureTextField: View {
     imageSize: CGFloat = 20,
     placeholder: String,
     value: Binding<String>,
+    keyboardType: UIKeyboardType = .default,
     autocapitalization: UITextAutocapitalizationType = .none,
     fontWeight: Font.Weight = .regular,
     onSubmit: @escaping () -> Void,
@@ -34,6 +36,8 @@ public struct AdvSecureTextField: View {
     self.imageSize = imageSize
     self.placeholder = placeholder
     self.value = value
+      self.keyboardType = keyboardType
+
     self.autocapitalization = autocapitalization
     self.fontWeight = fontWeight
     self.onSubmit = onSubmit
@@ -53,12 +57,16 @@ public struct AdvSecureTextField: View {
       ZStack(alignment: .trailing) {
         if isSecure {
           SecureField(placeholder, text: value)
+                .keyboardType(keyboardType)
+
             .padding(.leading).font(.system(size: fontSize, weight: fontWeight))
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .autocapitalization(autocapitalization)
             .onChange(of: value.wrappedValue) { _ in onSubmit() }
         } else {
           TextField(placeholder, text: value)
+                .keyboardType(keyboardType)
+
             .padding(.leading).font(.system(size: fontSize, weight: fontWeight))
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .autocapitalization(autocapitalization)

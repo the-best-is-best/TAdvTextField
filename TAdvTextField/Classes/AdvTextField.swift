@@ -9,6 +9,7 @@ public struct AdvTextField: View {
   public var placeholder: String
   public var cornerRadius: Double = 20
   public var value: Binding<String>
+  public var keyboardType: UIKeyboardType = .default;
   public var fontSize: CGFloat = 20
   public var fontWeight: Font.Weight = .regular
   public var autocapitalization: UITextAutocapitalizationType = .none
@@ -21,8 +22,10 @@ public struct AdvTextField: View {
     placeholder: String,
     cornerRadius: Double = 20,
     value: Binding<String>,
+    keyboardType: UIKeyboardType = .default,
     fontSize: CGFloat = 20,
     fontWeight: Font.Weight = .regular,
+
     autocapitalization: UITextAutocapitalizationType = .none,
     onSubmit: @escaping () -> Void
   ) {
@@ -32,6 +35,8 @@ public struct AdvTextField: View {
     self.placeholder = placeholder
     self.cornerRadius = cornerRadius
     self.value = value
+      self.keyboardType = keyboardType
+
     self.fontSize = fontSize
     self.fontWeight = fontWeight
     self.autocapitalization = autocapitalization
@@ -48,6 +53,7 @@ public struct AdvTextField: View {
       }
 
       TextField(placeholder, text: value)
+            .keyboardType(keyboardType)
         .padding(.leading)
         .font(.system(size: fontSize, weight: fontWeight))
         .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
