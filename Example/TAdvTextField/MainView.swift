@@ -14,7 +14,7 @@ struct MainView: View {
 
     var body: some View {
         VStack{
-            AdvTextField(placeholder: "Email",  value: $viewModel.email){
+            AdvTextField(placeholder: "Email",  value: $viewModel.email, keyboardType: .numberPad){
                 print("new v ", viewModel.email)
             }.overlay(
                 Rectangle()

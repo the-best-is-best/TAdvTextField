@@ -1,22 +1,24 @@
 {
   "name": "TAdvTextField",
-  "version": "0.1.0",
-  "summary": "A short description of TAdvTextField.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.2.1",
+  "summary": "Advanced Text Field",
+  "description": "Create Adv Text Field",
   "homepage": "https://github.com/the-best-is-best/TAdvTextField",
-  "license": {
-    "type": "MIT",
-    "file": "LICENSE"
+  "source": {
+    "git": "https://github.com/the-best-is-best/TAdvTextField.git",
+    "tag": "0.2.1"
   },
   "authors": {
     "the-best-is-best": "michelle.raouf@outlook.com"
   },
-  "source": {
-    "git": "https://github.com/the-best-is-best/TAdvTextField.git",
-    "tag": "0.1.0"
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
   },
+  "swift_versions": "5.5",
   "platforms": {
-    "ios": "10.0"
+    "ios": "14.0"
   },
-  "source_files": "TAdvTextField/Classes/**/*"
+  "source_files": "TAdvTextField/Classes/**/*",
+  "swift_version": "5.5"
 }

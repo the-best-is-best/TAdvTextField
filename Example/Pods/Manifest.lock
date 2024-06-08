@@ -1,5 +1,5 @@
 PODS:
-  - TAdvTextField (0.1.0)
+  - TAdvTextField (0.2.1)
 
 DEPENDENCIES:
   - TAdvTextField (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TAdvTextField: f42a833c25f69107a644f536069ef7cbf608887e
+  TAdvTextField: 58a4d1686bff148ddac42710e241599b19e420a7
 
-PODFILE CHECKSUM: 2bde2cb07102f7ad765c9d5fb12c815d736c2de9
+PODFILE CHECKSUM: 3ffa3667ade66e592b1c8264e54bb0ec97c4ee53
 
 COCOAPODS: 1.15.2
